@@ -1,4 +1,4 @@
-# ignore all logs
+# ignore env
 *.env
 
 # ignore /.idea .
