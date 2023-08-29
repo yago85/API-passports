@@ -2,6 +2,7 @@ package database
 
 import (
 	"fmt"
+	"github.com/yago85/API-passport/internal/model"
 	"log"
 	"strconv"
 
@@ -32,5 +33,9 @@ func ConnectDB() {
 		panic("failed to connect database")
 	}
 
-	fmt.Println("Connection Opened to Database")
+	fmt.Println("Выполнено подключение к базе данных")
+
+	// Выполняем миграции из internal/model/model.go
+	DB.AutoMigrate(&model.Note{})
+	fmt.Println("Database Migrated")
 }
